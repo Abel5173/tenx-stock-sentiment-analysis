@@ -1,11 +1,11 @@
 import talib
 import pandas as pd
 
+
 def add_trend_indicators(df):
     df['SMA_20'] = talib.SMA(df['Close'], timeperiod=20)
     df['EMA_20'] = talib.EMA(df['Close'], timeperiod=20)
-    # Manually compute WMA (Weighted Moving Average)
-    weights = list(range(1, 21))  # for 20-day WMA
+    weights = list(range(1, 21))
     df['WMA_20'] = df['Close'].rolling(20).apply(lambda prices: (prices * weights).sum() / sum(weights), raw=True)
     return df
 

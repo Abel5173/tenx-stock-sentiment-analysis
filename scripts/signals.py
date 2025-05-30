@@ -15,10 +15,6 @@ def generate_combined_signals(df):
 
 
 def generate_trading_signals(df):
-    """
-    Adds Buy_Signal and Sell_Signal columns to the DataFrame using combined logic:
-    RSI, MACD, and Bollinger Bands
-    """
     buy_conditions = (
         (df['RSI_14'] < 30) &
         (df['MACD'] > df['MACD_Signal']) &
