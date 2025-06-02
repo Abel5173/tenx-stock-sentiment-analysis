@@ -39,7 +39,7 @@ jobs:
         else
             echo "requirements.txt not found, installing default dependencies"
             pip install pytest
-            pip install pytest-cov
+            pip install pytest-cov black flake8
         fi
     - name: Run tests
       run: |
