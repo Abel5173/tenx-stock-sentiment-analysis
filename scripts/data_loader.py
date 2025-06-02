@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 
-def load_yfinance_data(data_dir='../data/yfinance_data'):
+def load_yfinance_data(data_dir='data/yfinance_data'):
     stock_data = {}
     for file in os.listdir(data_dir):
         if file.endswith('.csv'):
