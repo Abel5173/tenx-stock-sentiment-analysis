@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 
-def plot_price_and_sma(df, ticker='TICKER', sma_column='SMA_20'):
+
+def plot_price_and_sma(df, ticker="TICKER", sma_column="SMA_20"):
     """
     Plots the stock's closing price and a simple moving average (SMA).
 
@@ -9,13 +10,13 @@ def plot_price_and_sma(df, ticker='TICKER', sma_column='SMA_20'):
     - ticker: string, the stock ticker (for the title)
     - sma_column: string, column name of the moving average to plot
     """
-    if 'Close' not in df.columns or sma_column not in df.columns:
+    if "Close" not in df.columns or sma_column not in df.columns:
         print(f"Missing required columns in data for {ticker}")
         return
 
     plt.figure(figsize=(12, 6))
-    plt.plot(df.index, df['Close'], label='Close Price', linewidth=1.5)
-    plt.plot(df.index, df[sma_column], label=sma_column, linestyle='--', alpha=0.8)
+    plt.plot(df.index, df["Close"], label="Close Price", linewidth=1.5)
+    plt.plot(df.index, df[sma_column], label=sma_column, linestyle="--", alpha=0.8)
 
     plt.title(f"{ticker} - Price and {sma_column}")
     plt.xlabel("Date")
@@ -43,7 +44,7 @@ def plot_cumulative_returns(returns_dict, title="Cumulative Returns by Stock"):
     plt.title(title)
     plt.xlabel("Date")
     plt.ylabel("Cumulative Return")
-    plt.legend(loc='best')
+    plt.legend(loc="best")
     plt.grid(True)
     plt.tight_layout()
     plt.show()
