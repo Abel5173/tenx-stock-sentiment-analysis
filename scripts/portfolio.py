@@ -33,3 +33,7 @@ def plot_portfolio_performance(portfolio_returns):
     plt.legend()
     plt.tight_layout()
     plt.show()
+
+
+def calculate_returns(price_df):
+    return price_df.pct_change().dropna()
